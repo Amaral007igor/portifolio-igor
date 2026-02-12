@@ -1,0 +1,30 @@
+// 1. criamos uma variavel 'contador' para controlar
+// qual imagem devw aparecer
+let contador = 1;
+
+//2.a função 'setinterval' é um temporizador do navegador.
+// ele vai executar a 'proximg' repetidamente a cada 5000 milisegundos
+//5(segundos)
+setinterval(function(){
+    proximg();
+},5000);
+
+//3. esta é função responsavel pela trocar as nossa imagem
+function proximg(){
+    //toda vez que função roda ,somaos +1 ao contador para ir proxima imagem
+    contador++;
+    //logica de repetição
+    //como agora usamos 4 imagens ,reniciamos para 1 e o carrossel voltará
+    //para o inicio (loop)
+    if (contador > 4){
+        contador=1;
+    }
+    //manipulação do html(dom):
+    //aqui o javascript procura no html, o elemento que tem o id "radio"
+    //+ o número do contador .
+    //o '.checked = true'marca aqueles inputs de radio automaticamente
+    //quando o radio e marcado, o css que configuramos irá mudar a imagem
+    //automaticamente
+    document. getElementById('radio + contador').checked=true;
+    
+}
